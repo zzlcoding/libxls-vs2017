@@ -1,0 +1,13 @@
+language: c
+compiler:
+    - gcc
+    - clang
+os:
+    - linux
+    - osx
+script:
+    - touch aclocal.m4 configure Makefile.am Makefile.in
+    - ./configure
+    - make
+    - make check
+    - ./test2_libxls test/files/test2.xls
